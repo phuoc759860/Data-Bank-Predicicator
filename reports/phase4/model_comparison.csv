@@ -1,0 +1,5 @@
+stage,model,threshold,accuracy,precision,recall,f1,roc_auc,average_precision,true_positive,true_negative,false_positive,false_negative,predicted_positive,predicted_positive_pct
+Phase 3 baseline,Decision Tree,0.5,0.8284,0.3566,0.5803,0.4417,0.7787,0.388,614,6877,1108,444,1722,19.0424
+Phase 3 baseline,Random Forest,0.5,0.8703,0.4531,0.5246,0.4862,0.8031,0.4484,555,7315,670,503,1225,13.5464
+Phase 4 optimized (OOF threshold),Decision Tree,0.73,0.8756,0.4704,0.5028,0.4861,0.7795,0.4178,532,7386,599,526,1131,12.5069
+Phase 4 optimized (OOF threshold),Random Forest,0.2,0.8705,0.4544,0.5321,0.4902,0.8046,0.4557,563,7309,676,495,1239,13.7012

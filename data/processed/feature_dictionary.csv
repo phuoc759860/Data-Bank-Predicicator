@@ -1,0 +1,61 @@
+feature_name,source_variable,feature_group,feature_type,transformation,description,selected_for_pre_call_model
+num__age,age,client profile,numeric,StandardScaler (fit on training data only),Client age in years,True
+num__balance,balance,client profile,numeric,StandardScaler (fit on training data only),Average yearly account balance in EUR,True
+num__day,day,current campaign,numeric,StandardScaler (fit on training data only),Day of month of the last contact,True
+num__campaign,campaign,campaign history,numeric,StandardScaler (fit on training data only),Contacts performed during this campaign (including last),True
+num__previous,previous,campaign history,numeric,StandardScaler (fit on training data only),Contacts performed before this campaign,True
+num__pdays_since_previous_contact,pdays_since_previous_contact,campaign history,numeric,StandardScaler (fit on training data only),Days since the previous campaign contact; set to 0 when the client was never contacted (see has_previous_contact),True
+bin__default,default,client profile,binary,Passthrough as 0/1 (no scaling),"Has credit in default (1 = yes, 0 = no)",True
+bin__housing,housing,client profile,binary,Passthrough as 0/1 (no scaling),"Has a housing loan (1 = yes, 0 = no)",True
+bin__loan,loan,client profile,binary,Passthrough as 0/1 (no scaling),"Has a personal loan (1 = yes, 0 = no)",True
+bin__has_previous_contact,has_previous_contact,engineered,binary,Passthrough as 0/1 (no scaling),"1 if the client was contacted in a previous campaign (pdays != -1), else 0",True
+bin__previous_campaign_success,previous_campaign_success,engineered,binary,Passthrough as 0/1 (no scaling),"1 if the previous campaign outcome was a success, else 0",True
+cat__job_admin.,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: admin.,True
+cat__job_blue-collar,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: blue-collar,True
+cat__job_entrepreneur,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: entrepreneur,True
+cat__job_housemaid,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: housemaid,True
+cat__job_management,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: management,True
+cat__job_retired,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: retired,True
+cat__job_self-employed,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: self-employed,True
+cat__job_services,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: services,True
+cat__job_student,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: student,True
+cat__job_technician,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: technician,True
+cat__job_unemployed,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: unemployed,True
+cat__job_unknown,job,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Type of occupation - category: unknown,True
+cat__marital_divorced,marital,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Marital status (divorced includes widowed) - category: divorced,True
+cat__marital_married,marital,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Marital status (divorced includes widowed) - category: married,True
+cat__marital_single,marital,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Marital status (divorced includes widowed) - category: single,True
+cat__education_primary,education,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Education level - category: primary,True
+cat__education_secondary,education,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Education level - category: secondary,True
+cat__education_tertiary,education,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Education level - category: tertiary,True
+cat__education_unknown,education,client profile,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Education level - category: unknown,True
+cat__contact_cellular,contact,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Communication channel of the last contact - category: cellular,True
+cat__contact_telephone,contact,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Communication channel of the last contact - category: telephone,True
+cat__contact_unknown,contact,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Communication channel of the last contact - category: unknown,True
+cat__month_apr,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: apr,True
+cat__month_aug,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: aug,True
+cat__month_dec,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: dec,True
+cat__month_feb,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: feb,True
+cat__month_jan,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: jan,True
+cat__month_jul,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: jul,True
+cat__month_jun,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: jun,True
+cat__month_mar,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: mar,True
+cat__month_may,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: may,True
+cat__month_nov,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: nov,True
+cat__month_oct,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: oct,True
+cat__month_sep,month,current campaign,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Month of the last contact - category: sep,True
+cat__poutcome_failure,poutcome,campaign history,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Outcome of the previous marketing campaign - category: failure,True
+cat__poutcome_other,poutcome,campaign history,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Outcome of the previous marketing campaign - category: other,True
+cat__poutcome_success,poutcome,campaign history,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Outcome of the previous marketing campaign - category: success,True
+cat__poutcome_unknown,poutcome,campaign history,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')",Outcome of the previous marketing campaign - category: unknown,True
+cat__age_group_18-24,age_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Age bucket: 18-24, 25-34, 35-44, 45-54, 55-64, 65+ - category: 18-24",True
+cat__age_group_25-34,age_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Age bucket: 18-24, 25-34, 35-44, 45-54, 55-64, 65+ - category: 25-34",True
+cat__age_group_35-44,age_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Age bucket: 18-24, 25-34, 35-44, 45-54, 55-64, 65+ - category: 35-44",True
+cat__age_group_45-54,age_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Age bucket: 18-24, 25-34, 35-44, 45-54, 55-64, 65+ - category: 45-54",True
+cat__age_group_55-64,age_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Age bucket: 18-24, 25-34, 35-44, 45-54, 55-64, 65+ - category: 55-64",True
+cat__age_group_65+,age_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Age bucket: 18-24, 25-34, 35-44, 45-54, 55-64, 65+ - category: 65+",True
+cat__contact_frequency_group_1,contact_frequency_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Number of contacts in the current campaign, grouped as 1, 2-3, 4-5, 6+ - category: 1",True
+cat__contact_frequency_group_2-3,contact_frequency_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Number of contacts in the current campaign, grouped as 1, 2-3, 4-5, 6+ - category: 2-3",True
+cat__contact_frequency_group_4-5,contact_frequency_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Number of contacts in the current campaign, grouped as 1, 2-3, 4-5, 6+ - category: 4-5",True
+cat__contact_frequency_group_6+,contact_frequency_group,engineered,one-hot,"OneHotEncoder (fit on training data only, handle_unknown='ignore')","Number of contacts in the current campaign, grouped as 1, 2-3, 4-5, 6+ - category: 6+",True
+duration,duration,current campaign,excluded,Excluded from the primary pre-call model,Duration of the last call in seconds; excluded because it is only known after the call (post-call leakage),False

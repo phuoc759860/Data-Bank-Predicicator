@@ -1,0 +1,10 @@
+column,unknown_count,unknown_pct,unique_categories,has_unknown
+poutcome,36959,81.7478,4,True
+contact,13020,28.7983,3,True
+education,1857,4.1074,4,True
+job,288,0.637,12,True
+marital,0,0.0,3,False
+housing,0,0.0,2,False
+default,0,0.0,2,False
+loan,0,0.0,2,False
+month,0,0.0,12,False

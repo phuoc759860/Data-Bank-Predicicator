@@ -1,0 +1,132 @@
+================================================================================
+PHASE 4 - CLASSIFICATION REPORTS
+Bank Marketing Intelligence System
+================================================================================
+Generated: 2026-11-17 20:06:59
+Random state: 42
+Positive class: 1 = subscribed (yes)
+CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+The test set is the untouched Phase 2 test set. Hyperparameters and
+probability thresholds were selected using training data only.
+
+--------------------------------------------------------------------------------
+BASELINE PHASE 3: DECISION TREE (threshold=0.50)
+--------------------------------------------------------------------------------
+Accuracy : 0.8284
+Precision: 0.3566
+Recall   : 0.5803
+F1-score : 0.4417
+ROC-AUC  : 0.7787
+Average precision (PR-AUC): 0.3880
+Predicted positives: 1,722 (19.04%)
+
+Confusion matrix [[TN, FP], [FN, TP]]:
+  TN=6,877  FP=1,108
+  FN=444  TP=614
+
+              precision    recall  f1-score   support
+
+          no     0.9394    0.8612    0.8986      7985
+         yes     0.3566    0.5803    0.4417      1058
+
+    accuracy                         0.8284      9043
+   macro avg     0.6480    0.7208    0.6702      9043
+weighted avg     0.8712    0.8284    0.8451      9043
+
+
+--------------------------------------------------------------------------------
+BASELINE PHASE 3: RANDOM FOREST (threshold=0.50)
+--------------------------------------------------------------------------------
+Accuracy : 0.8703
+Precision: 0.4531
+Recall   : 0.5246
+F1-score : 0.4862
+ROC-AUC  : 0.8031
+Average precision (PR-AUC): 0.4484
+Predicted positives: 1,225 (13.55%)
+
+Confusion matrix [[TN, FP], [FN, TP]]:
+  TN=7,315  FP=670
+  FN=503  TP=555
+
+              precision    recall  f1-score   support
+
+          no     0.9357    0.9161    0.9258      7985
+         yes     0.4531    0.5246    0.4862      1058
+
+    accuracy                         0.8703      9043
+   macro avg     0.6944    0.7203    0.7060      9043
+weighted avg     0.8792    0.8703    0.8743      9043
+
+
+--------------------------------------------------------------------------------
+OPTIMIZED PHASE 4: DECISION TREE (OOF-selected threshold=0.73)
+--------------------------------------------------------------------------------
+Best parameters: {'min_samples_split': 2, 'min_samples_leaf': 50, 'max_depth': 10, 'criterion': 'gini', 'class_weight': 'balanced'}
+CV average precision: 0.4016
+Accuracy : 0.8756
+Precision: 0.4704
+Recall   : 0.5028
+F1-score : 0.4861
+ROC-AUC  : 0.7795
+Average precision (PR-AUC): 0.4178
+Predicted positives: 1,131 (12.51%)
+
+Confusion matrix [[TN, FP], [FN, TP]]:
+  TN=7,386  FP=599
+  FN=526  TP=532
+
+              precision    recall  f1-score   support
+
+          no     0.9335    0.9250    0.9292      7985
+         yes     0.4704    0.5028    0.4861      1058
+
+    accuracy                         0.8756      9043
+   macro avg     0.7019    0.7139    0.7076      9043
+weighted avg     0.8793    0.8756    0.8774      9043
+
+
+--------------------------------------------------------------------------------
+OPTIMIZED PHASE 4: RANDOM FOREST (OOF-selected threshold=0.20)
+--------------------------------------------------------------------------------
+Best parameters: {'n_estimators': 400, 'min_samples_split': 5, 'min_samples_leaf': 10, 'max_features': 0.3, 'max_depth': 18, 'class_weight': None}
+CV average precision: 0.4448
+Accuracy : 0.8705
+Precision: 0.4544
+Recall   : 0.5321
+F1-score : 0.4902
+ROC-AUC  : 0.8046
+Average precision (PR-AUC): 0.4557
+Predicted positives: 1,239 (13.70%)
+
+Confusion matrix [[TN, FP], [FN, TP]]:
+  TN=7,309  FP=676
+  FN=495  TP=563
+
+              precision    recall  f1-score   support
+
+          no     0.9366    0.9153    0.9258      7985
+         yes     0.4544    0.5321    0.4902      1058
+
+    accuracy                         0.8705      9043
+   macro avg     0.6955    0.7237    0.7080      9043
+weighted avg     0.8802    0.8705    0.8749      9043
+
+
+--------------------------------------------------------------------------------
+OPERATIONAL INTERPRETATION OF THE FOUR OUTCOMES
+--------------------------------------------------------------------------------
+True Positive (TP): a customer who subscribed and was predicted to
+  subscribe. This is a correctly targeted contact and the direct
+  campaign win.
+True Negative (TN): a customer who did not subscribe and was not
+  contacted. This is a correctly avoided contact and saves budget.
+False Positive (FP): a predicted subscriber who did not subscribe.
+  The bank pays for an unnecessary call or offer; this is the main
+  cost of a high-recall threshold.
+False Negative (FN): an actual subscriber who was predicted not to
+  subscribe. The bank loses a potential sale and customer attention;
+  this is the main cost of a high-precision threshold.
+
+Selected final model: Random Forest

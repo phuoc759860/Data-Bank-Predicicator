@@ -1,0 +1,7 @@
+split,class,count,percentage,split_total
+train,no,31937,88.3018,36168
+train,yes,4231,11.6982,36168
+test,no,7985,88.3003,9043
+test,yes,1058,11.6997,9043
+overall,no,39922,88.3015,45211
+overall,yes,5289,11.6985,45211

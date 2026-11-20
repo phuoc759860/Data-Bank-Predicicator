@@ -1,0 +1,122 @@
+rank,rule,samples,non_subscribers,subscribers,precision_pct,recall_of_all_subscribers_pct
+1,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month != nov AND month != jan AND month != feb,2630,1691,939,35.7,22.19
+2,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month != mar AND month != oct AND marital != single,8738,8148,590,6.75,13.94
+3,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month != mar AND month != oct AND marital = single,3238,2918,320,9.88,7.56
+4,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month != nov AND month != jan AND month = feb,1101,906,195,17.71,4.61
+5,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group != 1 AND day <= 18.50 AND pdays_since_previous_contact <= 23.00 AND age <= 59.50,1490,1358,132,8.86,3.12
+6,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact <= 82.50 AND day > 6.50 AND marital != married,1043,927,116,11.12,2.74
+7,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact <= 82.50 AND day > 6.50 AND marital = married,1431,1353,78,5.45,1.84
+8,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day > 7.50 AND day <= 13.50,84,10,74,88.1,1.75
+9,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month = nov AND day > 16.50 AND age <= 58.50,1080,1008,72,6.67,1.7
+10,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month != may AND age > 30.50 AND campaign <= 10.50 AND loan = 0,938,879,59,6.29,1.39
+11,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day > 18.50,73,16,57,78.08,1.35
+12,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month = nov AND day <= 16.50 AND pdays_since_previous_contact <= 95.50,121,67,54,44.63,1.28
+13,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day > 5.50 AND balance > 338.50 AND balance <= 6920.00,203,150,53,26.11,1.25
+14,poutcome != success AND contact = unknown AND marital = married AND month != may AND month = jun AND age > 36.50 AND balance <= 2851.50 AND campaign <= 9.50,1447,1395,52,3.59,1.23
+15,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day <= 7.50,68,17,51,75.0,1.21
+16,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > 70.50 AND age > 31.50 AND day > 12.50,1746,1698,48,2.75,1.13
+17,poutcome != success AND contact = unknown AND marital != married AND day > 13.50 AND day <= 29.50 AND month = may AND balance > 380.50 AND age <= 46.50,599,552,47,7.85,1.11
+18,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group != 1 AND day > 18.50 AND previous <= 0.50 AND balance <= 886.00,1344,1301,43,3.2,1.02
+19,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 177.50 AND pdays_since_previous_contact <= 184.50 AND job != admin. AND job = management,44,2,42,95.45,0.99
+20,poutcome = success AND housing = 1 AND month != may AND pdays_since_previous_contact > 175.50 AND pdays_since_previous_contact <= 185.50,45,7,38,84.44,0.9
+21,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month = may AND balance <= 380.50 AND job != technician AND campaign <= 2.50,787,751,36,4.57,0.85
+22,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month != nov AND month = jan AND day > 27.50,580,546,34,5.86,0.8
+23,poutcome = success AND housing = 1 AND month != may AND pdays_since_previous_contact > 84.50 AND pdays_since_previous_contact <= 100.50 AND balance > 728.50,38,5,33,86.84,0.78
+24,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month != nov AND month = jan AND day <= 27.50,84,51,33,39.29,0.78
+25,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 118.00 AND pdays_since_previous_contact <= 177.50,48,17,31,64.58,0.73
+26,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 177.50 AND pdays_since_previous_contact <= 184.50 AND job != admin. AND job != management AND balance <= 1080.00 AND previous > 2.50,31,1,30,96.77,0.71
+27,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month != may AND age <= 30.50 AND balance <= 958.00 AND loan = 0,195,165,30,15.38,0.71
+28,poutcome = success AND housing = 1 AND month != may AND pdays_since_previous_contact > 272.50,45,16,29,64.44,0.69
+29,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month = mar AND day <= 25.50,49,21,28,57.14,0.66
+30,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month != mar AND month = oct AND day > 16.50,53,25,28,52.83,0.66
+31,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group != 1 AND day > 18.50 AND previous <= 0.50 AND balance > 886.00,380,352,28,7.37,0.66
+32,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 184.50 AND job != admin. AND day > 10.50 AND campaign <= 1.50 AND balance > 646.50,29,2,27,93.1,0.64
+33,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 177.50 AND pdays_since_previous_contact <= 184.50 AND job != admin. AND job != management AND balance <= 1080.00 AND previous <= 2.50,34,7,27,79.41,0.64
+34,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 184.50 AND job != admin. AND day <= 10.50,45,19,26,57.78,0.61
+35,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact > 374.50 AND age > 36.50,40,16,24,60.0,0.57
+36,poutcome = success AND housing = 0 AND pdays_since_previous_contact <= 80.50 AND balance <= 1022.00,32,9,23,71.88,0.54
+37,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 184.50 AND job != admin. AND day > 10.50 AND campaign > 2.50,26,4,22,84.62,0.52
+38,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 177.50 AND pdays_since_previous_contact <= 184.50 AND job != admin. AND job != management AND balance > 1080.00 AND age > 55.50,28,6,22,78.57,0.52
+39,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact > 82.50 AND poutcome = other,28,7,21,75.0,0.5
+40,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact <= 82.50 AND day <= 6.50 AND balance <= 1342.00,39,18,21,53.85,0.5
+41,poutcome != success AND contact = unknown AND marital = married AND month != may AND month = jun AND age <= 36.50 AND balance > 400.50 AND balance <= 3070.00,197,176,21,10.66,0.5
+42,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job = technician,34,14,20,58.82,0.47
+43,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 177.50 AND job = admin.,37,17,20,54.05,0.47
+44,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day > 5.50 AND day <= 18.50 AND balance <= 338.50,84,64,20,23.81,0.47
+45,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 184.50 AND job != admin. AND day > 10.50 AND campaign <= 1.50 AND balance <= 646.50,25,6,19,76.0,0.45
+46,poutcome = success AND housing = 1 AND month != may AND pdays_since_previous_contact > 84.50 AND pdays_since_previous_contact <= 100.50 AND balance <= 728.50,28,9,19,67.86,0.45
+47,poutcome = success AND housing = 1 AND month != may AND pdays_since_previous_contact > 100.50 AND pdays_since_previous_contact <= 175.50,45,26,19,42.22,0.45
+48,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group != 1 AND day <= 18.50 AND pdays_since_previous_contact <= 23.00 AND age > 59.50,87,68,19,21.84,0.45
+49,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day > 13.50 AND day <= 18.50,34,16,18,52.94,0.43
+50,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 177.50 AND pdays_since_previous_contact <= 184.50 AND job != admin. AND job != management AND balance > 1080.00 AND age <= 55.50,26,9,17,65.38,0.4
+51,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 184.50 AND job != admin. AND day > 10.50 AND campaign > 1.50 AND campaign <= 2.50,33,16,17,51.52,0.4
+52,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 98.50 AND pdays_since_previous_contact <= 118.00 AND day > 13.50,35,18,17,48.57,0.4
+53,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month = jun AND day > 3.50 AND age_group = 25-34,26,10,16,61.54,0.38
+54,poutcome = success AND housing = 1 AND month = may AND campaign <= 1.50 AND pdays_since_previous_contact <= 279.50,25,11,14,56.0,0.33
+55,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact > 82.50 AND poutcome != other AND balance <= 594.50,26,12,14,53.85,0.33
+56,poutcome = success AND housing = 1 AND month != may AND pdays_since_previous_contact > 185.50 AND pdays_since_previous_contact <= 272.50,44,30,14,31.82,0.33
+57,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group != 1 AND day <= 18.50 AND pdays_since_previous_contact > 23.00,46,32,14,30.43,0.33
+58,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day > 5.50 AND balance > 6920.00,25,13,12,48.0,0.28
+59,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month = jun AND day > 3.50 AND age_group != 25-34,38,26,12,31.58,0.28
+60,poutcome = success AND housing = 0 AND pdays_since_previous_contact > 98.50 AND pdays_since_previous_contact <= 118.00 AND day <= 13.50,41,29,12,29.27,0.28
+61,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > 44.50 AND age > 29.50 AND age <= 31.50 AND education = secondary,129,117,12,9.3,0.28
+62,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact > 374.50 AND age <= 36.50,29,18,11,37.93,0.26
+63,poutcome != success AND contact = unknown AND marital = married AND month != may AND month != jun AND month != jul AND balance > 1195.50,31,20,11,35.48,0.26
+64,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day <= 5.50 AND education = tertiary AND balance > 910.50,39,28,11,28.21,0.26
+65,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month = nov AND day <= 16.50 AND pdays_since_previous_contact > 95.50,41,30,11,26.83,0.26
+66,poutcome != success AND contact = unknown AND marital != married AND day > 29.50 AND balance > 1415.00,42,31,11,26.19,0.26
+67,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day <= 5.50 AND education != tertiary AND education = secondary,87,76,11,12.64,0.26
+68,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group != 1 AND day > 18.50 AND previous > 0.50,25,15,10,40.0,0.24
+69,poutcome = success AND housing = 0 AND pdays_since_previous_contact <= 80.50 AND balance > 1022.00,25,15,10,40.0,0.24
+70,poutcome = success AND housing = 1 AND month = may AND campaign <= 1.50 AND pdays_since_previous_contact > 279.50,25,15,10,40.0,0.24
+71,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month = jun AND day <= 3.50 AND age > 37.50,27,17,10,37.04,0.24
+72,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month = nov AND day > 16.50 AND age > 58.50,49,39,10,20.41,0.24
+73,poutcome != success AND contact = unknown AND marital != married AND day <= 13.50 AND month = may AND balance > 380.50 AND age <= 46.50,239,229,10,4.18,0.24
+74,poutcome = success AND housing = 1 AND month = may AND campaign > 1.50 AND balance <= 985.00,25,16,9,36.0,0.21
+75,poutcome != success AND contact = unknown AND marital = married AND month != may AND month = jun AND age <= 36.50 AND balance <= 400.50,204,195,9,4.41,0.21
+76,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > 70.50 AND age > 31.50 AND day <= 12.50,651,643,8,1.23,0.19
+77,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact <= 82.50 AND day <= 6.50 AND balance > 1342.00,25,18,7,28.0,0.17
+78,poutcome = success AND housing = 1 AND month != may AND pdays_since_previous_contact <= 84.50,25,18,7,28.0,0.17
+79,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month = mar AND day > 25.50,26,20,6,23.08,0.14
+80,poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact > 82.50 AND poutcome != other AND balance > 594.50,31,25,6,19.35,0.14
+81,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > 44.50 AND balance <= 70.50 AND age > 38.50,64,58,6,9.38,0.14
+82,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day > 18.50 AND balance <= 338.50,80,74,6,7.5,0.14
+83,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > 44.50 AND balance <= 686.50 AND age <= 29.50,129,123,6,4.65,0.14
+84,poutcome != success AND contact = unknown AND marital != married AND day > 29.50 AND balance > 354.00 AND balance <= 634.50,25,20,5,20.0,0.12
+85,poutcome != success AND contact = unknown AND marital = married AND month != may AND month != jun AND month != jul AND balance > 293.00 AND balance <= 1195.50,27,22,5,18.52,0.12
+86,poutcome = success AND housing = 1 AND month = may AND campaign > 1.50 AND balance > 985.00,28,23,5,17.86,0.12
+87,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month != mar AND month = oct AND day <= 16.50,35,30,5,14.29,0.12
+88,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month = may AND balance <= 380.50 AND job != technician AND campaign > 2.50,319,314,5,1.57,0.12
+89,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance <= 44.50 AND job != services AND job != technician AND job = blue-collar,383,378,5,1.31,0.12
+90,poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month = jun AND day <= 3.50 AND age <= 37.50,26,22,4,15.38,0.09
+91,poutcome != success AND contact = unknown AND marital != married AND day > 29.50 AND balance > 14.00 AND balance <= 354.00,29,25,4,13.79,0.09
+92,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month != may AND age > 30.50 AND campaign <= 10.50 AND loan = 1,156,152,4,2.56,0.09
+93,poutcome != success AND contact = unknown AND marital = married AND month != may AND month = jun AND age > 36.50 AND balance > 2851.50 AND education != secondary,202,198,4,1.98,0.09
+94,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > -187.00 AND balance <= -6.50 AND job = services,25,22,3,12.0,0.07
+95,poutcome != success AND contact = unknown AND marital = married AND month != may AND month != jun AND month != jul AND balance <= 293.00,26,23,3,11.54,0.07
+96,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day <= 5.50 AND education = tertiary AND balance <= 910.50,35,32,3,8.57,0.07
+97,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month = may AND balance > 380.50 AND balance <= 727.00 AND age > 46.50,49,46,3,6.12,0.07
+98,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance <= 44.50 AND job != services AND job = technician AND age > 49.50,26,24,2,7.69,0.05
+99,poutcome != success AND contact = unknown AND marital = married AND month != may AND month != jun AND month = jul AND age <= 44.50 AND day > 3.50,35,33,2,5.71,0.05
+100,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month != may AND age <= 30.50 AND balance <= 958.00 AND loan = 1,40,38,2,5.0,0.05
+101,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month = may AND balance <= 380.50 AND job = technician AND campaign > 2.50,63,61,2,3.17,0.05
+102,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month = may AND balance > 727.00 AND age > 46.50,133,131,2,1.5,0.05
+103,poutcome != success AND contact = unknown AND marital != married AND day > 5.50 AND day <= 29.50 AND month != may AND age <= 30.50 AND balance > 958.00,25,24,1,4.0,0.02
+104,poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day <= 5.50 AND education != tertiary AND education != secondary,30,29,1,3.33,0.02
+105,poutcome != success AND contact = unknown AND marital != married AND day > 29.50 AND balance > 634.50 AND balance <= 1415.00,30,29,1,3.33,0.02
+106,poutcome != success AND contact = unknown AND marital != married AND day > 29.50 AND balance <= 14.00,32,31,1,3.12,0.02
+107,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance <= -187.00 AND job = services,38,37,1,2.63,0.02
+108,poutcome != success AND contact = unknown AND marital = married AND month != may AND month != jun AND month = jul AND age <= 44.50 AND day <= 3.50,39,38,1,2.56,0.02
+109,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > 44.50 AND age > 29.50 AND age <= 31.50 AND education != secondary,65,64,1,1.54,0.02
+110,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance <= 44.50 AND job != services AND job = technician AND age <= 49.50,91,90,1,1.1,0.02
+111,poutcome != success AND contact = unknown AND marital != married AND day <= 5.50 AND month != may AND age <= 30.50 AND balance > 958.00,43,43,0,0.0,0.0
+112,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month != may AND age > 30.50 AND campaign > 10.50,58,58,0,0.0,0.0
+113,poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month = may AND balance <= 380.50 AND job = technician AND campaign <= 2.50,175,175,0,0.0,0.0
+114,poutcome != success AND contact = unknown AND marital = married AND month != may AND month != jun AND month = jul AND age > 44.50,51,51,0,0.0,0.0
+115,poutcome != success AND contact = unknown AND marital = married AND month != may AND month = jun AND age <= 36.50 AND balance > 3070.00,52,52,0,0.0,0.0
+116,poutcome != success AND contact = unknown AND marital = married AND month != may AND month = jun AND age > 36.50 AND balance <= 2851.50 AND campaign > 9.50,88,88,0,0.0,0.0
+117,poutcome != success AND contact = unknown AND marital = married AND month != may AND month = jun AND age > 36.50 AND balance > 2851.50 AND education = secondary,124,124,0,0.0,0.0
+118,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance <= 44.50 AND job != services AND job != technician AND job != blue-collar,351,351,0,0.0,0.0
+119,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > -6.50 AND balance <= 44.50 AND job = services,61,61,0,0.0,0.0
+120,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > 686.50 AND age <= 29.50,81,81,0,0.0,0.0
+121,poutcome != success AND contact = unknown AND marital = married AND month = may AND balance > 44.50 AND balance <= 70.50 AND age > 31.50 AND age <= 38.50,34,34,0,0.0,0.0

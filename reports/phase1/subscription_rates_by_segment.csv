@@ -1,0 +1,51 @@
+segment_type,segment,n,subscriptions,non_subscriptions,subscription_rate_pct
+Occupation,student,938,269,669,28.678
+Occupation,retired,2264,516,1748,22.7915
+Occupation,unemployed,1303,202,1101,15.5027
+Occupation,management,9458,1301,8157,13.7556
+Occupation,admin.,5171,631,4540,12.2027
+Occupation,self-employed,1579,187,1392,11.8429
+Occupation,unknown,288,34,254,11.8056
+Occupation,technician,7597,840,6757,11.057
+Occupation,services,4154,369,3785,8.883
+Occupation,housemaid,1240,109,1131,8.7903
+Occupation,entrepreneur,1487,123,1364,8.2717
+Occupation,blue-collar,9732,708,9024,7.275
+Age group,18-24,809,207,602,25.5871
+Age group,25-34,14204,1773,12431,12.4824
+Age group,35-44,14534,1404,13130,9.6601
+Age group,45-54,9958,923,9035,9.2689
+Age group,55-64,4896,641,4255,13.0923
+Age group,65+,810,341,469,42.0988
+Marital status,single,12790,1912,10878,14.9492
+Marital status,divorced,5207,622,4585,11.9455
+Marital status,married,27214,2755,24459,10.1235
+Education,tertiary,13301,1996,11305,15.0064
+Education,unknown,1857,252,1605,13.5703
+Education,secondary,23202,2450,20752,10.5594
+Education,primary,6851,591,6260,8.6265
+Previous campaign outcome,success,1511,978,533,64.7253
+Previous campaign outcome,other,1840,307,1533,16.6848
+Previous campaign outcome,failure,4901,618,4283,12.6097
+Previous campaign outcome,unknown,36959,3386,33573,9.1615
+Contact method,cellular,29285,4369,24916,14.9189
+Contact method,telephone,2906,390,2516,13.4205
+Contact method,unknown,13020,530,12490,4.0707
+Housing loan,no,20081,3354,16727,16.7024
+Housing loan,yes,25130,1935,23195,7.7
+Personal loan,no,37967,4805,33162,12.6557
+Personal loan,yes,7244,484,6760,6.6814
+Credit default,no,44396,5237,39159,11.7961
+Credit default,yes,815,52,763,6.3804
+Contact month,jan,1403,142,1261,10.1212
+Contact month,feb,2649,441,2208,16.6478
+Contact month,mar,477,248,229,51.9916
+Contact month,apr,2932,577,2355,19.6794
+Contact month,may,13766,925,12841,6.7195
+Contact month,jun,5341,546,4795,10.2228
+Contact month,jul,6895,627,6268,9.0935
+Contact month,aug,6247,688,5559,11.0133
+Contact month,sep,579,269,310,46.4594
+Contact month,oct,738,323,415,43.7669
+Contact month,nov,3970,403,3567,10.1511
+Contact month,dec,214,100,114,46.729

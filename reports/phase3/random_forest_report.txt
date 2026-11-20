@@ -1,0 +1,62 @@
+==============================================================================
+RANDOM FOREST - PHASE 3 REPORT
+==============================================================================
+Generated: 2026-11-17 19:37:48
+Random state: 42
+Positive class: 1 = subscribed (yes)
+CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+MODEL SELECTION (training data only)
+------------------------------------------------------------------------------
+Best parameters: {'max_depth': None, 'min_samples_leaf': 5, 'n_estimators': 200}
+Best mean CV F1: 0.4664
+Selection metric: F1 (positive class) on 5 stratified folds
+
+TEST-SET EVALUATION (evaluated once, not used for tuning)
+------------------------------------------------------------------------------
+Accuracy : 0.8703
+Precision: 0.4531  (positive class)
+Recall   : 0.5246  (positive class)
+F1-score : 0.4862
+ROC-AUC  : 0.8031
+Predicted positives: 1,225 (13.55% of test rows; base rate is 11.70%)
+
+Confusion matrix [[TN, FP], [FN, TP]]:
+  TN=7,315  FP=670
+  FN=503  TP=555
+
+CLASSIFICATION REPORT
+------------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+          no     0.9357    0.9161    0.9258      7985
+         yes     0.4531    0.5246    0.4862      1058
+
+    accuracy                         0.8703      9043
+   macro avg     0.6944    0.7203    0.7060      9043
+weighted avg     0.8792    0.8703    0.8743      9043
+
+
+TOP FEATURE IMPORTANCES
+------------------------------------------------------------------------------
+                          feature  importance
+                     num__balance    0.113913
+                         num__age    0.096220
+                         num__day    0.092806
+   bin__previous_campaign_success    0.044917
+             cat__contact_unknown    0.041794
+                     bin__housing    0.041644
+num__pdays_since_previous_contact    0.040931
+            cat__poutcome_success    0.039026
+                    num__campaign    0.038105
+            cat__contact_cellular    0.029204
+                    num__previous    0.023279
+                   cat__month_may    0.017620
+                        bin__loan    0.014824
+             cat__marital_married    0.014374
+                   cat__month_apr    0.013406
+             cat__job_blue-collar    0.013399
+                   cat__month_jun    0.013365
+                   cat__month_aug    0.013287
+         cat__education_secondary    0.012801
+                   cat__month_oct    0.012576

@@ -1,0 +1,19 @@
+* text=auto
+
+# Preserve raw CSV bytes exactly so the dataset checksum remains stable.
+*.csv -text
+
+# Binary artifacts must never be line-ending converted.
+*.joblib binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+
+# Keep source and documentation consistent across platforms.
+*.py text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.txt text eol=lf
+*.ini text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf

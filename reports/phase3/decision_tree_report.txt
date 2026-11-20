@@ -1,0 +1,460 @@
+==============================================================================
+DECISION TREE - PHASE 3 REPORT
+==============================================================================
+Generated: 2026-11-17 19:37:48
+Random state: 42
+Positive class: 1 = subscribed (yes)
+CV: StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+MODEL SELECTION (training data only)
+------------------------------------------------------------------------------
+Best parameters: {'max_depth': 8, 'min_samples_leaf': 25, 'min_samples_split': 2}
+Best mean CV F1: 0.4178
+Selection metric: F1 (positive class) on 5 stratified folds
+
+TEST-SET EVALUATION (evaluated once, not used for tuning)
+------------------------------------------------------------------------------
+Accuracy : 0.8284
+Precision: 0.3566  (positive class)
+Recall   : 0.5803  (positive class)
+F1-score : 0.4417
+ROC-AUC  : 0.7787
+Predicted positives: 1,722 (19.04% of test rows; base rate is 11.70%)
+
+Confusion matrix [[TN, FP], [FN, TP]]:
+  TN=6,877  FP=1,108
+  FN=444  TP=614
+
+CLASSIFICATION REPORT
+------------------------------------------------------------------------------
+              precision    recall  f1-score   support
+
+          no     0.9394    0.8612    0.8986      7985
+         yes     0.3566    0.5803    0.4417      1058
+
+    accuracy                         0.8284      9043
+   macro avg     0.6480    0.7208    0.6702      9043
+weighted avg     0.8712    0.8284    0.8451      9043
+
+
+TOP FEATURE IMPORTANCES
+------------------------------------------------------------------------------
+                          feature  importance
+            cat__poutcome_success    0.305102
+             cat__contact_unknown    0.174015
+                     bin__housing    0.081075
+                         num__day    0.070142
+                   cat__month_jul    0.052133
+                   cat__month_aug    0.049724
+num__pdays_since_previous_contact    0.038050
+                   cat__month_nov    0.027102
+                     num__balance    0.026857
+                   cat__month_jan    0.022285
+   cat__contact_frequency_group_1    0.019679
+                   cat__month_jun    0.019501
+                         num__age    0.017432
+             cat__marital_married    0.016737
+                   cat__month_feb    0.015483
+                   cat__month_mar    0.015212
+                   cat__month_oct    0.013263
+              cat__marital_single    0.008647
+                    num__previous    0.007059
+                   cat__month_may    0.006902
+
+MOST IMPORTANT DECISION RULES (ranked by training subscribers)
+------------------------------------------------------------------------------
+ rank                                                                                                                                                                                    rule  samples  non_subscribers  subscribers  precision_pct  recall_of_all_subscribers_pct
+    1                                         poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month != nov AND month != jan AND month != feb     2630             1691          939          35.70                          22.19
+    2          poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month != mar AND month != oct AND marital != single     8738             8148          590           6.75                          13.94
+    3           poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month != mar AND month != oct AND marital = single     3238             2918          320           9.88                           7.56
+    4                                          poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month != nov AND month != jan AND month = feb     1101              906          195          17.71                           4.61
+    5 poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group != 1 AND day <= 18.50 AND pdays_since_previous_contact <= 23.00 AND age <= 59.50     1490             1358          132           8.86                           3.12
+    6             poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact <= 82.50 AND day > 6.50 AND marital != married     1043              927          116          11.12                           2.74
+    7              poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month = jul AND pdays_since_previous_contact <= 82.50 AND day > 6.50 AND marital = married     1431             1353           78           5.45                           1.84
+    8             poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day > 7.50 AND day <= 13.50       84               10           74          88.10                           1.75
+    9                                           poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month = nov AND day > 16.50 AND age <= 58.50     1080             1008           72           6.67                           1.70
+   10                                   poutcome != success AND contact = unknown AND marital != married AND day <= 29.50 AND month != may AND age > 30.50 AND campaign <= 10.50 AND loan = 0      938              879           59           6.29                           1.39
+   11                             poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day > 18.50       73               16           57          78.08                           1.35
+   12                 poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month = nov AND day <= 16.50 AND pdays_since_previous_contact <= 95.50      121               67           54          44.63                           1.28
+   13                   poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day > 5.50 AND balance > 338.50 AND balance <= 6920.00      203              150           53          26.11                           1.25
+   14                            poutcome != success AND contact = unknown AND marital = married AND month != may AND month = jun AND age > 36.50 AND balance <= 2851.50 AND campaign <= 9.50     1447             1395           52           3.59                           1.23
+   15                             poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day <= 7.50       68               17           51          75.00                           1.21
+
+HIGHEST-PRECISION RULES (minimum 50 training samples)
+------------------------------------------------------------------------------
+ rank                                                                                                                                                                        rule  samples  non_subscribers  subscribers  precision_pct  recall_of_all_subscribers_pct
+    8 poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day > 7.50 AND day <= 13.50       84               10           74          88.10                           1.75
+   11                 poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day > 18.50       73               16           57          78.08                           1.35
+   15                 poutcome = success AND housing = 0 AND pdays_since_previous_contact > 80.50 AND pdays_since_previous_contact <= 98.50 AND job != technician AND day <= 7.50       68               17           51          75.00                           1.21
+   30     poutcome != success AND contact != unknown AND housing = 1 AND pdays_since_previous_contact <= 374.50 AND month != jun AND month != mar AND month = oct AND day > 16.50       53               25           28          52.83                           0.66
+   12     poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month = nov AND day <= 16.50 AND pdays_since_previous_contact <= 95.50      121               67           54          44.63                           1.28
+   24                              poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month != nov AND month = jan AND day <= 27.50       84               51           33          39.29                           0.78
+    1                             poutcome != success AND contact != unknown AND housing = 0 AND month != aug AND month != jul AND month != nov AND month != jan AND month != feb     2630             1691          939          35.70                          22.19
+   13       poutcome != success AND contact != unknown AND housing = 0 AND month = aug AND contact_frequency_group = 1 AND day > 5.50 AND balance > 338.50 AND balance <= 6920.00      203              150           53          26.11                           1.25
+
+Each rule is a root-to-leaf path. 'precision_pct' is the leaf's subscriber share; 'recall_of_all_subscribers_pct' is the share of all training subscribers captured by that leaf. Repeated numeric bounds are simplified for readability; the exact path is in the full tree below.
+
+FULL TREE STRUCTURE (export_text, transformed feature space)
+------------------------------------------------------------------------------
+|--- cat__poutcome_success <= 0.500
+|   |--- cat__contact_unknown <= 0.500
+|   |   |--- bin__housing <= 0.500
+|   |   |   |--- cat__month_aug <= 0.500
+|   |   |   |   |--- cat__month_jul <= 0.500
+|   |   |   |   |   |--- cat__month_nov <= 0.500
+|   |   |   |   |   |   |--- cat__month_jan <= 0.500
+|   |   |   |   |   |   |   |--- cat__month_feb <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- cat__month_feb >  0.500
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- cat__month_jan >  0.500
+|   |   |   |   |   |   |   |--- num__day <= 1.402
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__day >  1.402
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- cat__month_nov >  0.500
+|   |   |   |   |   |   |--- num__day <= 0.082
+|   |   |   |   |   |   |   |--- num__pdays_since_previous_contact <= 0.546
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__pdays_since_previous_contact >  0.546
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__day >  0.082
+|   |   |   |   |   |   |   |--- num__age <= 1.657
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__age >  1.657
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- cat__month_jul >  0.500
+|   |   |   |   |   |--- num__pdays_since_previous_contact <= 0.416
+|   |   |   |   |   |   |--- num__day <= -1.118
+|   |   |   |   |   |   |   |--- num__balance <= -0.008
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__balance >  -0.008
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__day >  -1.118
+|   |   |   |   |   |   |   |--- cat__marital_married <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- cat__marital_married >  0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__pdays_since_previous_contact >  0.416
+|   |   |   |   |   |   |--- cat__poutcome_other <= 0.500
+|   |   |   |   |   |   |   |--- num__balance <= -0.251
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__balance >  -0.251
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- cat__poutcome_other >  0.500
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- cat__month_aug >  0.500
+|   |   |   |   |--- cat__contact_frequency_group_1 <= 0.500
+|   |   |   |   |   |--- num__day <= 0.322
+|   |   |   |   |   |   |--- num__pdays_since_previous_contact <= -0.180
+|   |   |   |   |   |   |   |--- num__age <= 1.751
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__age >  1.751
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__pdays_since_previous_contact >  -0.180
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__day >  0.322
+|   |   |   |   |   |   |--- num__previous <= -0.034
+|   |   |   |   |   |   |   |--- num__balance <= -0.156
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__balance >  -0.156
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__previous >  -0.034
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- cat__contact_frequency_group_1 >  0.500
+|   |   |   |   |   |--- num__day <= -1.238
+|   |   |   |   |   |   |--- cat__education_tertiary <= 0.500
+|   |   |   |   |   |   |   |--- cat__education_secondary <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- cat__education_secondary >  0.500
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- cat__education_tertiary >  0.500
+|   |   |   |   |   |   |   |--- num__balance <= -0.148
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__balance >  -0.148
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__day >  -1.238
+|   |   |   |   |   |   |--- num__balance <= -0.335
+|   |   |   |   |   |   |   |--- num__day <= 0.322
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__day >  0.322
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__balance >  -0.335
+|   |   |   |   |   |   |   |--- num__balance <= 1.810
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__balance >  1.810
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |--- bin__housing >  0.500
+|   |   |   |--- num__pdays_since_previous_contact <= 3.341
+|   |   |   |   |--- cat__month_jun <= 0.500
+|   |   |   |   |   |--- cat__month_mar <= 0.500
+|   |   |   |   |   |   |--- cat__month_oct <= 0.500
+|   |   |   |   |   |   |   |--- cat__marital_single <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- cat__marital_single >  0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- cat__month_oct >  0.500
+|   |   |   |   |   |   |   |--- num__day <= 0.082
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__day >  0.082
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- cat__month_mar >  0.500
+|   |   |   |   |   |   |--- num__day <= 1.162
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__day >  1.162
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- cat__month_jun >  0.500
+|   |   |   |   |   |--- num__day <= -1.478
+|   |   |   |   |   |   |--- num__age <= -0.319
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__age >  -0.319
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__day >  -1.478
+|   |   |   |   |   |   |--- cat__age_group_25-34 <= 0.500
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- cat__age_group_25-34 >  0.500
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- num__pdays_since_previous_contact >  3.341
+|   |   |   |   |--- num__age <= -0.413
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__age >  -0.413
+|   |   |   |   |   |--- class: 1
+|   |--- cat__contact_unknown >  0.500
+|   |   |--- cat__marital_married <= 0.500
+|   |   |   |--- num__day <= 1.642
+|   |   |   |   |--- cat__month_may <= 0.500
+|   |   |   |   |   |--- num__age <= -0.978
+|   |   |   |   |   |   |--- num__balance <= -0.133
+|   |   |   |   |   |   |   |--- bin__loan <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- bin__loan >  0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__balance >  -0.133
+|   |   |   |   |   |   |   |--- num__day <= -1.238
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__day >  -1.238
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__age >  -0.978
+|   |   |   |   |   |   |--- num__campaign <= 2.492
+|   |   |   |   |   |   |   |--- bin__loan <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- bin__loan >  0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__campaign >  2.492
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- cat__month_may >  0.500
+|   |   |   |   |   |--- num__balance <= -0.321
+|   |   |   |   |   |   |--- cat__job_technician <= 0.500
+|   |   |   |   |   |   |   |--- num__campaign <= -0.085
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__campaign >  -0.085
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- cat__job_technician >  0.500
+|   |   |   |   |   |   |   |--- num__campaign <= -0.085
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__campaign >  -0.085
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__balance >  -0.321
+|   |   |   |   |   |   |--- num__age <= 0.528
+|   |   |   |   |   |   |   |--- num__day <= -0.278
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__day >  -0.278
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__age >  0.528
+|   |   |   |   |   |   |   |--- num__balance <= -0.208
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__balance >  -0.208
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |--- num__day >  1.642
+|   |   |   |   |--- num__balance <= 0.016
+|   |   |   |   |   |--- num__balance <= -0.440
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__balance >  -0.440
+|   |   |   |   |   |   |--- num__balance <= -0.238
+|   |   |   |   |   |   |   |--- num__balance <= -0.330
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__balance >  -0.330
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__balance >  -0.238
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- num__balance >  0.016
+|   |   |   |   |   |--- class: 1
+|   |   |--- cat__marital_married >  0.500
+|   |   |   |--- cat__month_may <= 0.500
+|   |   |   |   |--- cat__month_jun <= 0.500
+|   |   |   |   |   |--- cat__month_jul <= 0.500
+|   |   |   |   |   |   |--- num__balance <= -0.055
+|   |   |   |   |   |   |   |--- num__balance <= -0.350
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__balance >  -0.350
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__balance >  -0.055
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- cat__month_jul >  0.500
+|   |   |   |   |   |   |--- num__age <= 0.339
+|   |   |   |   |   |   |   |--- num__day <= -1.478
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__day >  -1.478
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__age >  0.339
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- cat__month_jun >  0.500
+|   |   |   |   |   |--- num__age <= -0.413
+|   |   |   |   |   |   |--- num__balance <= 0.555
+|   |   |   |   |   |   |   |--- num__balance <= -0.314
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__balance >  -0.314
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__balance >  0.555
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__age >  -0.413
+|   |   |   |   |   |   |--- num__balance <= 0.484
+|   |   |   |   |   |   |   |--- num__campaign <= 2.170
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__campaign >  2.170
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__balance >  0.484
+|   |   |   |   |   |   |   |--- cat__education_secondary <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- cat__education_secondary >  0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |--- cat__month_may >  0.500
+|   |   |   |   |--- num__balance <= -0.431
+|   |   |   |   |   |--- cat__job_services <= 0.500
+|   |   |   |   |   |   |--- cat__job_technician <= 0.500
+|   |   |   |   |   |   |   |--- cat__job_blue-collar <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- cat__job_blue-collar >  0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- cat__job_technician >  0.500
+|   |   |   |   |   |   |   |--- num__age <= 0.810
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__age >  0.810
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- cat__job_services >  0.500
+|   |   |   |   |   |   |--- num__balance <= -0.447
+|   |   |   |   |   |   |   |--- num__balance <= -0.506
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__balance >  -0.506
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__balance >  -0.447
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- num__balance >  -0.431
+|   |   |   |   |   |--- num__age <= -0.884
+|   |   |   |   |   |   |--- num__age <= -1.072
+|   |   |   |   |   |   |   |--- num__balance <= -0.221
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__balance >  -0.221
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__age >  -1.072
+|   |   |   |   |   |   |   |--- cat__education_secondary <= 0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- cat__education_secondary >  0.500
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- num__age >  -0.884
+|   |   |   |   |   |   |--- num__balance <= -0.422
+|   |   |   |   |   |   |   |--- num__age <= -0.225
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__age >  -0.225
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- num__balance >  -0.422
+|   |   |   |   |   |   |   |--- num__day <= -0.398
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- num__day >  -0.398
+|   |   |   |   |   |   |   |   |--- class: 0
+|--- cat__poutcome_success >  0.500
+|   |--- bin__housing <= 0.500
+|   |   |--- num__pdays_since_previous_contact <= 1.368
+|   |   |   |--- num__pdays_since_previous_contact <= 0.576
+|   |   |   |   |--- num__pdays_since_previous_contact <= 0.396
+|   |   |   |   |   |--- num__balance <= -0.112
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__balance >  -0.112
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__pdays_since_previous_contact >  0.396
+|   |   |   |   |   |--- cat__job_technician <= 0.500
+|   |   |   |   |   |   |--- num__day <= -0.278
+|   |   |   |   |   |   |   |--- num__day <= -0.998
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__day >  -0.998
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__day >  -0.278
+|   |   |   |   |   |   |   |--- num__day <= 0.322
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__day >  0.322
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- cat__job_technician >  0.500
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- num__pdays_since_previous_contact >  0.576
+|   |   |   |   |--- num__pdays_since_previous_contact <= 0.772
+|   |   |   |   |   |--- num__day <= -0.278
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__day >  -0.278
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__pdays_since_previous_contact >  0.772
+|   |   |   |   |   |--- class: 1
+|   |   |--- num__pdays_since_previous_contact >  1.368
+|   |   |   |--- cat__job_admin. <= 0.500
+|   |   |   |   |--- num__pdays_since_previous_contact <= 1.438
+|   |   |   |   |   |--- cat__job_management <= 0.500
+|   |   |   |   |   |   |--- num__balance <= -0.093
+|   |   |   |   |   |   |   |--- num__previous <= 0.796
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__previous >  0.796
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__balance >  -0.093
+|   |   |   |   |   |   |   |--- num__age <= 1.375
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__age >  1.375
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- cat__job_management >  0.500
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__pdays_since_previous_contact >  1.438
+|   |   |   |   |   |--- num__day <= -0.638
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__day >  -0.638
+|   |   |   |   |   |   |--- num__campaign <= -0.407
+|   |   |   |   |   |   |   |--- num__balance <= -0.234
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__balance >  -0.234
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__campaign >  -0.407
+|   |   |   |   |   |   |   |--- num__campaign <= -0.085
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__campaign >  -0.085
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- cat__job_admin. >  0.500
+|   |   |   |   |--- class: 1
+|   |--- bin__housing >  0.500
+|   |   |--- cat__month_may <= 0.500
+|   |   |   |--- num__pdays_since_previous_contact <= 0.436
+|   |   |   |   |--- class: 1
+|   |   |   |--- num__pdays_since_previous_contact >  0.436
+|   |   |   |   |--- num__pdays_since_previous_contact <= 1.448
+|   |   |   |   |   |--- num__pdays_since_previous_contact <= 1.348
+|   |   |   |   |   |   |--- num__pdays_since_previous_contact <= 0.596
+|   |   |   |   |   |   |   |--- num__balance <= -0.208
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num__balance >  -0.208
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num__pdays_since_previous_contact >  0.596
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__pdays_since_previous_contact >  1.348
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__pdays_since_previous_contact >  1.448
+|   |   |   |   |   |--- num__pdays_since_previous_contact <= 2.319
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num__pdays_since_previous_contact >  2.319
+|   |   |   |   |   |   |--- class: 1
+|   |   |--- cat__month_may >  0.500
+|   |   |   |--- num__campaign <= -0.407
+|   |   |   |   |--- num__pdays_since_previous_contact <= 2.389
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__pdays_since_previous_contact >  2.389
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- num__campaign >  -0.407
+|   |   |   |   |--- num__balance <= -0.124
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num__balance >  -0.124
+|   |   |   |   |   |--- class: 1
+

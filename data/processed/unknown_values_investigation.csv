@@ -1,0 +1,10 @@
+column,unknown_count,unknown_pct,unknown_subscription_rate_pct,known_subscription_rate_pct,rate_gap_pct_points,treatment
+job,288,0.6370,11.8056,11.6978,0.1078,Retain as an explicit 'unknown' level (one-hot encoded).
+marital,0,0.0000,,11.6985,,No unknown values; no action needed.
+education,1857,4.1074,13.5703,11.6183,1.9520,Retain as an explicit 'unknown' level (one-hot encoded).
+default,0,0.0000,,11.6985,,No unknown values; binary encoding applied.
+housing,0,0.0000,,11.6985,,No unknown values; binary encoding applied.
+loan,0,0.0000,,11.6985,,No unknown values; binary encoding applied.
+contact,13020,28.7983,4.0707,14.7836,-10.7130,Retain as an explicit 'unknown' level (one-hot); no separate missingness flag.
+month,0,0.0000,,11.6985,,No unknown values; one-hot encoded.
+poutcome,36959,81.7478,9.1615,23.0611,-13.8996,Retain as an explicit 'unknown' level; previous_campaign_success captures confirmed prior success separately.
